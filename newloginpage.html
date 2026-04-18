@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ScholarGate | Secure Access</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#737785",
+                    "on-secondary-container": "#3e5181",
+                    "primary": "#004590",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-tertiary-container": "#ffcebd",
+                    "primary-fixed": "#d7e2ff",
+                    "outline-variant": "#c3c6d6",
+                    "secondary-container": "#b3c5fd",
+                    "surface-bright": "#f8f9fa",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#edeeef",
+                    "primary-container": "#265dad",
+                    "on-primary-container": "#c8d9ff",
+                    "on-primary-fixed": "#001b3f",
+                    "surface": "#f8f9fa",
+                    "secondary-fixed": "#dae2ff",
+                    "surface-dim": "#d9dadb",
+                    "surface-variant": "#e1e3e4",
+                    "error": "#ba1a1a",
+                    "tertiary": "#822800",
+                    "on-background": "#191c1d",
+                    "tertiary-fixed": "#ffdbcf",
+                    "inverse-primary": "#abc7ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#00458f",
+                    "on-tertiary-fixed-variant": "#812800",
+                    "surface-container-low": "#f3f4f5",
+                    "tertiary-fixed-dim": "#ffb59b",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#191c1d",
+                    "primary-fixed-dim": "#abc7ff",
+                    "on-secondary-fixed-variant": "#324575",
+                    "secondary": "#4a5d8e",
+                    "tertiary-container": "#a93802",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#424654",
+                    "inverse-surface": "#2e3132",
+                    "surface-container-high": "#e7e8e9",
+                    "background": "#f8f9fa",
+                    "surface-tint": "#255dad",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#001847",
+                    "secondary-fixed-dim": "#b3c5fd",
+                    "on-tertiary-fixed": "#380d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    
+        const regSubmitBtn = document.getElementById('reg-submit-btn');
+        regSubmitBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isTeacher = document.getElementById('account-teacher').checked;
+            if (isTeacher) {
+                window.location.href = '{{DATA:SCREEN:SCREEN_12}}';
+            } else {
+                window.location.href = '{{DATA:SCREEN:SCREEN_9}}';
+            }
+        });
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 40px -10px rgba(25, 28, 29, 0.06);
+        }
+        .bg-glass {
+            backdrop-filter: blur(24px);
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #004590 0%, #265dad 100%);
+        }
+        input[type="radio"]:checked + label {
+            background-color: #ffffff;
+            color: #004590;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col">
+<main class="flex-grow flex flex-col lg:flex-row items-center justify-center p-6 lg:p-12 gap-12 max-w-[1440px] mx-auto w-full">
+<section class="w-full lg:w-1/2 flex flex-col space-y-8 max-w-md lg:max-w-xl">
+<header class="space-y-4">
+<div class="flex items-center space-x-3 mb-6">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" style='font-variation-settings: "FILL" 1;'>school</span>
+</div>
+<span class="text-2xl font-headline font-extrabold tracking-tight text-primary">FOKELGate</span>
+</div>
+<h1 class="text-5xl lg:text-6xl font-headline font-extrabold text-on-surface tracking-tight leading-tight">
+                    The Archive of <br/><span class="text-primary-container">Academic Excellence</span>
+</h1>
+<p class="text-on-surface-variant text-lg max-w-md leading-relaxed">
+                    Join the curated platform for institutional data management. Secure, precise, and designed for the modern scholar.
+                </p>
+</header>
+<div class="hidden lg:grid grid-cols-2 gap-4 mt-8">
+<div class="p-6 bg-surface-container-low rounded-xl space-y-2">
+<span class="material-symbols-outlined text-primary" style='font-variation-settings: "FILL" 1;'>security</span>
+<h3 class="font-headline font-bold text-on-surface">Verified Access</h3>
+<p class="text-sm text-on-surface-variant">Encrypted entry for authorized student profiles.</p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl space-y-2">
+<span class="material-symbols-outlined text-primary" style='font-variation-settings: "FILL" 1;'>analytics</span>
+<h3 class="font-headline font-bold text-on-surface">Data Precision</h3>
+<p class="text-sm text-on-surface-variant">Validated entry fields for academic records.</p>
+</div>
+</div>
+</section>
+<section class="w-full lg:w-1/2 flex justify-center">
+<div class="bg-surface-container-lowest editorial-shadow rounded-xl w-full max-w-lg p-8 lg:p-10 border border-outline-variant/10">
+<div class="flex bg-surface-container-low p-1.5 rounded-full mb-8">
+<button class="flex-1 py-2 px-6 rounded-full text-sm font-semibold transition-all text-on-surface-variant" id="login-tab">Log In</button>
+<button class="flex-1 py-2 px-6 rounded-full text-sm font-semibold transition-all bg-surface-container-lowest text-primary shadow-sm" id="register-tab">Register</button>
+</div>
+<div class="space-y-6 hidden" id="login-section">
+<div class="space-y-2">
+<h2 class="text-2xl font-headline font-bold text-on-surface">Welcome Back</h2>
+<p class="text-sm text-on-surface-variant">Please enter your credentials to access the dashboard.</p>
+</div>
+<form class="space-y-4">
+<div class="space-y-1.5">
+<label class="text-xs font-label font-semibold text-on-surface-variant px-1" for="login-email">School Email</label>
+<input class="w-full px-4 py-3 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline/50" id="login-email" placeholder="student@university.edu" type="email"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-label font-semibold text-on-surface-variant px-1" for="login-pass">Password</label>
+<input class="w-full px-4 py-3 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline/50" id="login-pass" placeholder="••••••••" type="password"/>
+</div>
+<div class="flex items-center justify-between px-1">
+<label class="flex items-center text-xs text-on-surface-variant cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary mr-2" type="checkbox"/>
+<span class="group-hover:text-on-surface transition-colors">Remember device</span>
+</label>
+<a class="text-xs font-semibold text-primary hover:underline" href="#">Forgot password?</a>
+</div>
+<button class="w-full btn-gradient text-on-primary py-3.5 rounded-xl font-bold text-sm tracking-wide shadow-lg shadow-primary/20 hover:opacity-90 active:scale-[0.98] transition-all mt-4" type="submit">
+                            Log Into ScholarGate
+                        </button>
+</form>
+</div>
+<div class="space-y-6" id="register-section">
+<div class="space-y-2">
+<h2 class="text-2xl font-headline font-bold text-on-surface" id="register-title">Create Student Account</h2>
+<p class="text-sm text-on-surface-variant">Register your institutional identity for portal access.</p>
+</div>
+<div class="flex bg-surface-container-low p-1 rounded-xl mb-4">
+<div class="flex-1">
+<input checked="" class="hidden" id="account-student" name="account-type" type="radio" value="student"/>
+<label class="block text-center py-2 text-xs font-semibold rounded-lg cursor-pointer transition-all text-on-surface-variant hover:text-on-surface" for="account-student">Student</label>
+</div>
+<div class="flex-1">
+<input class="hidden" id="account-teacher" name="account-type" type="radio" value="teacher"/>
+<label class="block text-center py-2 text-xs font-semibold rounded-lg cursor-pointer transition-all text-on-surface-variant hover:text-on-surface" for="account-teacher">Teacher</label>
+</div>
+</div>
+<form class="space-y-4">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<div class="space-y-1.5">
+<label class="text-xs font-label font-semibold text-on-surface-variant px-1" for="reg-first">First Name</label>
+<input class="w-full px-4 py-2.5 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface" id="reg-first" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-label font-semibold text-on-surface-variant px-1" for="reg-middle">Middle Name</label>
+<input class="w-full px-4 py-2.5 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface" id="reg-middle" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-label font-semibold text-on-surface-variant px-1" for="reg-last">Last Name</label>
+<input class="w-full px-4 py-2.5 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface" id="reg-last" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div class="space-y-1.5">
+<label class="text-xs font-label font-semibold text-on-surface-variant px-1" for="reg-email">School Email</label>
+<input class="w-full px-4 py-2.5 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline/40" id="reg-email" placeholder="name@edu.com" type="email"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-label font-semibold text-on-surface-variant px-1" for="reg-id" id="id-label">Student ID Number</label>
+<input class="w-full px-4 py-2.5 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline/40" id="reg-id" placeholder="00-000-00" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div class="space-y-1.5" id="teacher-field-container">
+<label class="text-xs font-label font-semibold text-on-surface-variant px-1" for="reg-dynamic" id="dynamic-label">Teacher Name</label>
+<input class="w-full px-4 py-2.5 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline/40" id="reg-dynamic" placeholder="Dr. Smith" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-label font-semibold text-on-surface-variant px-1" for="reg-time">Class Time</label>
+<input class="w-full px-4 py-2.5 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline/40" id="reg-time" placeholder="10:30 AM - 12:00 PM" type="text"/>
+</div>
+</div>
+<div class="space-y-3 pt-2">
+<div class="space-y-1.5">
+<label class="text-xs font-label font-semibold text-on-surface-variant px-1" for="reg-pass">Password</label>
+<input class="w-full px-4 py-2.5 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface" id="reg-pass" placeholder="••••••••" type="password"/>
+<div class="bg-primary-fixed/30 p-3 rounded-lg flex items-start gap-2 mt-2">
+<span class="material-symbols-outlined text-on-primary-fixed-variant text-[16px] mt-0.5">info</span>
+<p class="text-[10px] leading-tight text-on-primary-fixed-variant font-medium">
+                                        Security requirement: Minimum 8 characters, at least one uppercase letter, one numerical digit, and one special character.
+                                    </p>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-label font-semibold text-on-surface-variant px-1" for="reg-confirm">Confirm Password</label>
+<input class="w-full px-4 py-2.5 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface" id="reg-confirm" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<button class="w-full btn-gradient text-on-primary py-3.5 rounded-xl font-bold text-sm tracking-wide shadow-lg shadow-primary/20 hover:opacity-90 active:scale-[0.98] transition-all mt-4" id="reg-submit-btn" type="submit">
+                            Complete Registration
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-slate-100 dark:bg-slate-950 flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 gap-4 border-t border-slate-200/50 dark:border-slate-800/50 mt-auto">
+<div class="flex items-center space-x-2">
+<span class="text-sm font-semibold text-slate-900 dark:text-slate-100 font-headline">FOKELGate</span>
+<span class="text-slate-400">|</span>
+<span class="font-inter text-xs tracking-wide uppercase text-slate-600 dark:text-slate-400">© 2026 FOKEL Academic Systems. All rights reserved.</span>
+</div>
+<nav class="flex gap-8">
+<a class="font-inter text-xs tracking-wide uppercase text-slate-500 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-all hover:underline focus:outline-none ring-2 ring-blue-500" href="#">Privacy Policy</a>
+<a class="font-inter text-xs tracking-wide uppercase text-slate-500 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-all hover:underline focus:outline-none ring-2 ring-blue-500" href="#">Terms of Service</a>
+<a class="font-inter text-xs tracking-wide uppercase text-slate-500 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-all hover:underline focus:outline-none ring-2 ring-blue-500" href="#">Security Audit</a>
+<a class="font-inter text-xs tracking-wide uppercase text-slate-500 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-all hover:underline focus:outline-none ring-2 ring-blue-500" href="#">Contact Support</a>
+</nav>
+</footer>
+<script>
+        const loginTab = document.getElementById('login-tab');
+        const registerTab = document.getElementById('register-tab');
+        const loginSection = document.getElementById('login-section');
+        const registerSection = document.getElementById('register-section');
+
+        loginTab.addEventListener('click', () => {
+            loginTab.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+            loginTab.classList.remove('text-on-surface-variant');
+            registerTab.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+            registerTab.classList.add('text-on-surface-variant');
+            loginSection.classList.remove('hidden');
+            registerSection.classList.add('hidden');
+        });
+
+        registerTab.addEventListener('click', () => {
+            registerTab.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+            registerTab.classList.remove('text-on-surface-variant');
+            loginTab.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+            loginTab.classList.add('text-on-surface-variant');
+            registerSection.classList.remove('hidden');
+            loginSection.classList.add('hidden');
+        });
+
+        const accountRadios = document.getElementsByName('account-type');
+        const registerTitle = document.getElementById('register-title');
+        const idLabel = document.getElementById('id-label');
+        const idInput = document.getElementById('reg-id');
+        const dynamicLabel = document.getElementById('dynamic-label');
+        const dynamicInput = document.getElementById('reg-dynamic');
+
+        accountRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'teacher') {
+                    registerTitle.textContent = 'Create Teacher Account';
+                    idLabel.textContent = 'Employee ID Number';
+                    idInput.placeholder = 'E-000-000';
+                    dynamicLabel.textContent = 'Class Days';
+                    dynamicInput.placeholder = 'M/W/F or T/Th';
+                } else {
+                    registerTitle.textContent = 'Create Student Account';
+                    idLabel.textContent = 'Student ID Number';
+                    idInput.placeholder = '00-000-00';
+                    dynamicLabel.textContent = 'Teacher Name';
+                    dynamicInput.placeholder = 'Dr. Smith';
+                }
+            });
+        });
+    
+        const regSubmitBtn = document.getElementById('reg-submit-btn');
+        regSubmitBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isTeacher = document.getElementById('account-teacher').checked;
+            if (isTeacher) {
+                window.location.href = '{{DATA:SCREEN:SCREEN_12}}';
+            } else {
+                window.location.href = '{{DATA:SCREEN:SCREEN_9}}';
+            }
+        });
+    </script>
+</body></html>

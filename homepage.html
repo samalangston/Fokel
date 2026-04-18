@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FOKEL: Future of Key Entry Legacy</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#255dad",
+                    "on-surface-variant": "#424654",
+                    "on-secondary-container": "#3e5181",
+                    "secondary": "#4a5d8e",
+                    "outline": "#737785",
+                    "inverse-primary": "#abc7ff",
+                    "secondary-fixed-dim": "#b3c5fd",
+                    "tertiary-container": "#a93802",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#191c1d",
+                    "inverse-surface": "#2e3132",
+                    "surface-container-low": "#f3f4f5",
+                    "background": "#f8f9fa",
+                    "tertiary-fixed": "#ffdbcf",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-container": "#edeeef",
+                    "surface-dim": "#d9dadb",
+                    "on-primary-fixed": "#001b3f",
+                    "tertiary": "#822800",
+                    "surface-bright": "#f8f9fa",
+                    "on-tertiary-container": "#ffcebd",
+                    "on-surface": "#191c1d",
+                    "surface-variant": "#e1e3e4",
+                    "secondary-container": "#b3c5fd",
+                    "on-primary-container": "#c8d9ff",
+                    "on-tertiary-fixed": "#380d00",
+                    "surface-container-high": "#e7e8e9",
+                    "primary-container": "#265dad",
+                    "on-secondary-fixed-variant": "#324575",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "primary": "#004590",
+                    "inverse-on-surface": "#f0f1f2",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#dae2ff",
+                    "tertiary-fixed-dim": "#ffb59b",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#00458f",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#812800",
+                    "primary-fixed": "#d7e2ff",
+                    "primary-fixed-dim": "#abc7ff",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#c3c6d6",
+                    "surface": "#f8f9fa",
+                    "on-secondary-fixed": "#001847"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        background: rgba(248, 249, 250, 0.8);
+        backdrop-filter: blur(24px);
+      }
+      .editorial-gradient {
+        background: linear-gradient(135deg, #004590 0%, #265dad 100%);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl shadow-sm">
+<nav class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tight text-blue-800" style="">FOKEL</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium font-inter text-blue-700 border-b-2 border-blue-700 pb-1" href="#" style="">Dashboard</a>
+<a class="text-sm font-medium font-inter text-slate-600 hover:text-blue-600 transition-colors" href="#" style="">Data Entry</a>
+<a class="text-sm font-medium font-inter text-slate-600 hover:text-blue-600 transition-colors" href="#" style="">Records</a>
+<a class="text-sm font-medium font-inter text-slate-600 hover:text-blue-600 transition-colors" href="#" style="">Settings</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-slate-200/50 rounded-lg transition-all active:scale-95" style="">
+<span class="material-symbols-outlined text-blue-700" style="">account_circle</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative px-8 py-20 lg:py-32 max-w-screen-2xl mx-auto overflow-hidden">
+<div class="grid lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10">
+<span class="inline-flex items-center px-4 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold mb-6" style="">
+                        ESTABLISHING THE NEW STANDARD
+                    </span>
+<h1 class="font-headline text-5xl lg:text-7xl font-extrabold text-on-background leading-[1.1] mb-8 tracking-tight" style="">
+                        Welcome to FOKEL: <br/>
+<span class="text-primary italic" style="">Future of Key Entry Legacy</span>
+</h1>
+<p class="text-lg lg:text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed" style="">
+                        A curated digital ecosystem designed for institutional authority and data precision. Transition from traditional entry methods to an editorial data-centric experience.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="editorial-gradient text-on-primary px-8 py-4 rounded-xl font-semibold flex items-center gap-2 shadow-lg hover:opacity-90 transition-all active:scale-95 inline-flex" href="{{DATA:SCREEN:SCREEN_2}}">
+                            Go to Dashboard
+                            <span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>arrow_forward</span>
+</a>
+<a class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-xl font-semibold hover:bg-opacity-80 transition-all inline-flex" href="{{DATA:SCREEN:SCREEN_2}}">
+                            Start Data Entry
+                        </a>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-square bg-surface-container-low rounded-[3rem] overflow-hidden rotate-3 relative shadow-2xl">
+<img alt="Data Visualization" class="w-full h-full object-cover mix-blend-overlay opacity-60" data-alt="Modern clean digital interface showing abstract glowing data points and architectural geometric lines in deep blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKkZ2BEyHH0wLzHym1ppUIuHAFLEhUycwitc7GjvFs3Z_BGw9IfLrsd9uF00OBCKClmRMgb-1fDFvZk-vftJ4l6KTzqaBhs1onQ0HqmeAtmWkhnnLD9JtIO8S3MhNIAXWxqRX1Wp1SsofUuPMqVlXCawCXd4DJyIhu5DfkA1N8bPenlb7rc_4Tx1YWu4ZW5E8M8wqtLg7nf81Et3X4ZrCZzk2zYr0qqfQSi34xZ0VvZvmaijg6CrN3hDysoSHffACvF86uM69nYoxJ" style=""/>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 p-6 bg-surface-container-lowest/90 backdrop-blur-md rounded-2xl">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="">analytics</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface" style="">Curated Accuracy</p>
+<p class="text-xs text-on-surface-variant" style="">99.9% Validation Rate</p>
+</div>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-4/5 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-tertiary-fixed/30 blur-3xl rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Database Integration Section (New) -->
+<section class="py-24 px-8 border-y border-outline-variant/10">
+<div class="max-w-screen-2xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 relative">
+<div class="bg-surface-container rounded-[2rem] p-8 aspect-video flex flex-col justify-center border border-outline-variant/20 shadow-inner overflow-hidden relative">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-3 h-3 rounded-full bg-error"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<div class="h-px bg-outline-variant/30 flex-1 ml-4"></div>
+</div>
+<div class="space-y-4 font-mono text-xs text-on-surface-variant">
+<div class="flex gap-4 p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/10">
+<span class="text-primary font-bold">CONNECT</span>
+<span class="text-on-surface">INSTITUTIONAL_DB_01</span>
+<span class="ml-auto text-green-600 flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">check_circle</span> SECURE</span>
+</div>
+<div class="flex gap-4 p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/10 opacity-70">
+<span class="text-primary font-bold">FETCH</span>
+<span class="text-on-surface">LEGACY_RECORDS_V4</span>
+<span class="ml-auto text-blue-600 flex items-center gap-1">SYNCING...</span>
+</div>
+<div class="flex gap-4 p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/10 opacity-40">
+<span class="text-primary font-bold">QUERY</span>
+<span class="text-on-surface">SELECT * FROM ARCHIVES</span>
+</div>
+</div>
+<!-- Decorative blur -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/5 blur-3xl rounded-full"></div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<span class="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-4 block" style="">Architectural Authority</span>
+<h2 class="font-headline text-4xl lg:text-5xl font-black mb-8 leading-tight text-on-background" style="">Direct Database Access: The Institutional Link</h2>
+<p class="text-lg text-on-surface-variant mb-8 leading-relaxed" style="">
+                        FOKEL doesn't just store data; it bridges the gap between heritage systems and modern curation. Our Secure Database Integration provides an encrypted pipeline directly to your institutional servers.
+                    </p>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="mt-1 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1;'>database</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface" style="">Seamless Data Flow</h4>
+<p class="text-sm text-on-surface-variant" style="">Automated bidirectional synchronization between FOKEL and existing SQL or NoSQL environments.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="mt-1 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1;'>shield_with_heart</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface" style="">Legacy System Integration</h4>
+<p class="text-sm text-on-surface-variant" style="">Preserve decades of institutional history through non-destructive read/write protocols designed for legacy architecture.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Bento Grid -->
+<section class="bg-surface-container-low py-24 px-8">
+<div class="max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="font-headline text-3xl lg:text-4xl font-bold mb-4" style="">Beyond Utility: The Digital Curator Approach</h2>
+<p class="text-on-surface-variant leading-relaxed" style="">
+                            We treat every keystroke as a contribution to a larger institutional legacy. Our system eliminates visual clutter to focus on what matters most: the integrity of your data.
+                        </p>
+</div>
+<div class="text-primary font-bold flex items-center gap-2 cursor-pointer hover:underline" style="">
+                        Explore Full Architecture
+                        <span class="material-symbols-outlined" style="">trending_flat</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] flex flex-col justify-between min-h-[320px] transition-all hover:shadow-xl group">
+<div class="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" style="">terminal</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold mb-2" style="">The Legacy Transition</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">
+                                Seamlessly migrate traditional flat-file systems into our authoritative relational environment without data loss.
+                            </p>
+</div>
+</div>
+<!-- Card 2 (Large) -->
+<div class="bg-primary text-on-primary p-8 rounded-[2rem] flex flex-col justify-between min-h-[320px] shadow-lg md:col-span-2 relative overflow-hidden">
+<div class="z-10">
+<h3 class="font-headline text-2xl font-bold mb-4" style="">Institutional Precision</h3>
+<p class="text-on-primary-container max-w-md leading-relaxed" style="">
+                                Our "No-Line" interface reduces cognitive load by 40%, allowing researchers and clerks to maintain focus during intensive entry sessions.
+                            </p>
+</div>
+<div class="z-10 flex gap-4">
+<span class="px-4 py-2 bg-on-primary/10 rounded-full text-xs font-medium backdrop-blur-sm" style="">Automated QC</span>
+<span class="px-4 py-2 bg-on-primary/10 rounded-full text-xs font-medium backdrop-blur-sm" style="">Blockchain Validation</span>
+</div>
+<img alt="Abstract Data Flow" class="absolute right-0 bottom-0 w-1/2 h-full object-cover mix-blend-soft-light opacity-30" data-alt="Abstract visualization of flowing white data lines over a deep royal blue background with cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo621i6LzfHPegkIF05FPpfdDG-gFa3DLnYmu06AbysWeAMPbXsYWt5iQ54D-y37G8sLQOV8zv3F67kpM1aB02_bGNneuRYZk4rgL7sRFH0sbDUAfeVXbmTnIQ4wEX8Wm09XtpNyuN9HPigBPBlg-21o0-87GB36PEuZ4-ewIroIeC0p-t_whHfreXFSZcE2-LjNScmypc7c_sfE7RM_aZYkA1cdzbxQ1Xqzz-wEK9DvAxMNjfLVNZK-ykuVDKkcFSzg-fzAj1JoM9" style=""/>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-highest p-8 rounded-[2rem] flex flex-col justify-between min-h-[320px]">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-4xl text-primary" style="">verified_user</span>
+<span class="text-xs font-bold text-primary px-3 py-1 bg-primary/10 rounded-full" style="">SECURE</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2" style="">Authored Controls</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">
+                                Granular permissions that treat access as a privilege of the curator, ensuring maximum security standards.
+                            </p>
+</div>
+<a class="w-full py-3 bg-surface-container-lowest border border-outline-variant/20 rounded-xl text-sm font-semibold hover:bg-primary hover:text-on-primary transition-all inline-flex justify-center" href="{{DATA:SCREEN:SCREEN_2}}">
+                            View Access Protocols
+                        </a>
+</div>
+<!-- Card 5 -->
+<div class="bg-white p-8 rounded-[2rem] flex flex-col justify-between min-h-[320px] shadow-sm">
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1;'>bolt</span>
+</div>
+<span class="text-sm font-bold uppercase tracking-widest text-on-surface-variant" style="">Real-Time Sync</span>
+</div>
+<h3 class="font-headline text-xl font-bold" style="">Future-Proof Architecture</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">
+                                Built on a reactive engine that updates global records in milliseconds.
+                            </p>
+</div>
+<div class="flex -space-x-2">
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+<img alt="User" class="" data-alt="Professional man in a business suit portrait with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOTwIQbDZDx1W8t9U8BG0o3LUBVqo5cS_IQf6gZLnQbY344Ur2PRHHpkZcXEWya6RqbO1iM-9bJAk2Hvur6At2HtqXFLm35DSuWGMsUmCJewEVSHuYnwrrLNXPV-nHf51Qkm7pNAKHmZU06CqScwEgBXZwChy9AV6ZsXHaQhWPdo0McwpNdk92qbJRKeFqJI-Mn1SMaOtG5MUTbdJxaD-0u5YlYo2Eu06FodzGofdBWGvfBYilDPMrcA4rtH_cfgbB_bPmVynx9bFz" style=""/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+<img alt="User" class="" data-alt="Professional woman portrait with neutral background and soft key lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzW5qkvXetE9cYY5JCt-3Ndqk7FRmwWjCPucrUtl--H7yShIKv1_kk0_9HJEpj-9l4bJSJjESz_Z2tSQay2rNNZ1UVnHs2W3tNww7XA-X759trdzj8JLmzS3P8R9cna6E5ihlNLRzvhW2D-fmNU5JuU7MBm_caMTigcY8fZqOCGCnjTs2ahpmo8ngBJrX7p_wPt_7t8D6TP63ZTiAlualUaNecRWZxZaFt5TwXopDIqcShpDT6JBu0IXyGTPQgQp9J_ruoPaxS18Lh" style=""/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-primary text-on-primary flex items-center justify-center text-xs font-bold" style="">
+                                +12
+                            </div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-low border border-outline-variant/10 p-8 rounded-[2rem] flex flex-col justify-center items-center text-center">
+<div class="mb-4 text-primary">
+<span class="material-symbols-outlined text-6xl" style="">school</span>
+</div>
+<h3 class="font-headline text-lg font-bold mb-2 text-on-surface" style="">Institutional Access</h3>
+<p class="text-xs text-on-surface-variant mb-6" style="">Register your organization for a premium heritage account.</p>
+<a class="text-primary font-bold text-sm underline hover:opacity-80" href="{{DATA:SCREEN:SCREEN_2}}">
+Request Documentation
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-8 relative">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-headline text-4xl lg:text-5xl font-black mb-8 leading-tight" style="">Ready to redefine your legacy?</h2>
+<p class="text-lg text-on-surface-variant mb-12 max-w-2xl mx-auto" style="">
+                    Join the academic community that has chosen precision over utility. Your data entry experience deserves the FOKEL standard.
+                </p>
+<div class="inline-flex p-2 bg-surface-container-high rounded-2xl">
+<a class="px-8 py-4 bg-primary text-on-primary rounded-xl font-bold shadow-md hover:scale-[1.02] transition-all inline-flex" href="{{DATA:SCREEN:SCREEN_2}}">
+Get Started Now
+</a>
+<a class="px-8 py-4 text-on-surface font-bold hover:bg-surface-container-lowest rounded-xl transition-all inline-flex" href="{{DATA:SCREEN:SCREEN_2}}">
+Contact Teacher
+</a>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="absolute inset-0 -z-10 pointer-events-none opacity-20 overflow-hidden">
+<div class="absolute top-1/2 left-1/4 w-[600px] h-[600px] border border-primary/20 rounded-full animate-pulse"></div>
+<div class="absolute top-1/3 right-1/4 w-[400px] h-[400px] border border-primary/10 rounded-full"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 bg-slate-100">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-10 gap-6 max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-2">
+<div class="text-lg font-bold text-slate-900" style="">FOKEL</div>
+<p class="text-xs font-inter text-slate-500" style="">© 2024 FOKEL: Future of Key Entry Legacy. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-xs font-inter text-slate-500 hover:text-blue-600 underline transition-all duration-300" href="#" style="">Privacy Policy</a>
+<a class="text-xs font-inter text-slate-500 hover:text-blue-600 underline transition-all duration-300" href="#" style="">Terms of Service</a>
+<a class="text-xs font-inter text-slate-500 hover:text-blue-600 underline transition-all duration-300" href="#" style="">Institutional Access</a>
+<a class="text-xs font-inter text-slate-500 hover:text-blue-600 underline transition-all duration-300" href="#" style="">Support</a>
+</div>
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-on-primary transition-all cursor-pointer">
+<span class="material-symbols-outlined text-sm" style="">language</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-on-primary transition-all cursor-pointer">
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1;'>mail</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

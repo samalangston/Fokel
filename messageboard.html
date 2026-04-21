@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Profile | FOKEL Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#c8d9ff",
+                    "surface-bright": "#f8f9fa",
+                    "outline": "#737785",
+                    "on-secondary-container": "#3e5181",
+                    "primary-container": "#265dad",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#abc7ff",
+                    "primary-fixed-dim": "#abc7ff",
+                    "tertiary-fixed": "#ffdbcf",
+                    "tertiary-container": "#a93802",
+                    "on-secondary-fixed-variant": "#324575",
+                    "secondary-fixed": "#dae2ff",
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-fixed": "#d7e2ff",
+                    "on-primary-fixed": "#001b3f",
+                    "on-background": "#191c1d",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#b3c5fd",
+                    "surface-tint": "#255dad",
+                    "surface-dim": "#d9dadb",
+                    "tertiary-fixed-dim": "#ffb59b",
+                    "on-error-container": "#93000a",
+                    "surface": "#f8f9fa",
+                    "on-tertiary-container": "#ffcebd",
+                    "inverse-surface": "#2e3132",
+                    "on-tertiary-fixed-variant": "#812800",
+                    "on-primary-fixed-variant": "#00458f",
+                    "on-secondary-fixed": "#001847",
+                    "outline-variant": "#c3c6d6",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "tertiary": "#822800",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-highest": "#e1e3e4",
+                    "secondary-container": "#b3c5fd",
+                    "on-surface-variant": "#424654",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f3f4f5",
+                    "surface-container": "#edeeef",
+                    "background": "#f8f9fa",
+                    "surface-container-high": "#e7e8e9",
+                    "primary": "#004590",
+                    "secondary": "#4a5d8e",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#380d00",
+                    "on-surface": "#191c1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-transition { background-color: #edeeef; }
+        .glass-effect { backdrop-filter: blur(24px); }
+    
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e1e3e4;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #c3c6d6;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-md flex justify-between items-center px-8 h-16">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-extrabold tracking-tighter text-blue-800 font-headline">FOKEL Academy</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="font-headline font-bold tracking-tight text-slate-500 hover:text-blue-600 transition-colors" href="#">Dashboard</a>
+<a class="font-headline font-bold tracking-tight text-slate-500 hover:text-blue-600 transition-colors" href="#">Practice</a>
+<a class="font-headline font-bold tracking-tight text-slate-500 hover:text-blue-600 transition-colors" href="#">Messages</a>
+<a class="font-headline font-bold tracking-tight text-blue-700 border-b-2 border-blue-700 pb-1" href="#">Profile</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:text-blue-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-blue-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="Student Profile" class="w-full h-full object-cover" data-alt="Close up professional headshot of a young male student with friendly expression against a clean studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0vxFW9Aj3ez0my4hGksIuzzj40v2ehvGrlYf_cQr0lbG9MPacVcsbMtxY4zA2adDRj38zoaSmjtEL4CqO-pqoIdcTruyWIRTODlweuFE2qs1cWap339bIua2wOla02FO-8Tfa3aPg17DOiv82Tc8zcO6BPX517yyErJn2076nCgFt7M59XUKufv56iCj1ZLptLr9kckUQPvLXMmdyD9tB5HKDApVxIxbmuAY42egZfteOsOS4Hbse1SrN-Fd2uGg_w-aOF5Pp19lN"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-12 px-8 max-w-7xl mx-auto flex flex-col gap-12">
+<!-- Profile Header Hero -->
+<section class="relative bg-surface-container-low rounded-xl p-8 overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-br from-primary/10 to-transparent"></div>
+<div class="flex flex-col md:flex-row items-center md:items-end gap-8 relative z-10">
+<div class="w-32 h-32 rounded-xl bg-surface-container-lowest shadow-sm p-1">
+<img alt="Curator-042" class="w-full h-full object-cover rounded-lg" data-alt="Professional studio portrait of a male student wearing a neutral colored sweater, bright eyes, softly lit background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbvwdoREacrc7PQ9F9u-xfdG8GiiSdNArWwSKc9Gb3NeydpyLxNs8XlfXfibslqgPLiVAF7UVn3lVOSc-nHZ4Kzv9B6yLkfhDkkl500J0I6keQBDjo-1WBcczuXfZzhdOq6l9XIer4RzgN0M1If8JWZK8WzOiiSSS7RAcVFfV97FMRNuh1ouCm0mBGDkAmB7A-d9Kcn7O1TLkVgdtGaeTfrgDE0x1yhqKEuLkML4PNYuzMb1SzQNORo_hT1ExmKLX-BiaOYxfffpEo"/>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h1 class="text-4xl font-extrabold font-headline tracking-tight text-primary mb-1">Curator-042</h1>
+<p class="text-on-surface-variant font-medium">Advanced Medical Coding &amp; Legal Indexing Track</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-3 bg-primary text-on-primary rounded-lg font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+                        Edit Profile
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bento Layout for Information -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Column 1: Personal, Contact, and Security -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Section 1: Personal Information -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex items-center gap-3 mb-8">
+<span class="p-2 bg-primary-container text-on-primary-container rounded-lg">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</span>
+<h2 class="text-xl font-bold font-headline text-primary">Personal Information</h2>
+</div>
+<div class="flex flex-col gap-6 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">First Name</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="text" value="Alexander"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Middle Name</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="text" value="James"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Last Name</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="text" value="Curator"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Nickname</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="text" value="AJ"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Date of Birth</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="date" value="1995-05-15"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Phone Number</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="tel" value="+1 (555) 123-4567"/>
+</div>
+</div>
+</div>
+<!-- Section 2: Contact & Address -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex items-center gap-3 mb-8">
+<span class="p-2 bg-secondary-container text-on-secondary-container rounded-lg">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</span>
+<h2 class="text-xl font-bold font-headline text-primary">Contact &amp; Address</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Student Email</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="email" value="alex.curator@fokel.edu"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Recovery Email</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="email" value="alex.j.personal@gmail.com"/>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Street Address</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="text" value="742 Evergreen Terrace"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">City</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="text" value="Springfield"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">State</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="text" value="Oregon"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Zip Code</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="text" value="97477"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Security & Password -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex items-center gap-3 mb-8">
+<span class="p-2 bg-error-container text-on-error-container rounded-lg">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</span>
+<h2 class="text-xl font-bold font-headline text-primary">Security &amp; Password</h2>
+</div>
+<!-- Reset Password Sub-section -->
+<div class="mb-10">
+<h3 class="text-sm font-bold text-on-surface-variant uppercase tracking-wider mb-4 px-1">Reset Password</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Current Password</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" placeholder="••••••••" type="password"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">New Password</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" placeholder="Enter new password" type="password"/>
+</div>
+</div>
+<button class="mt-6 px-6 py-2.5 bg-primary/10 text-primary rounded-lg font-bold text-sm hover:bg-primary hover:text-on-primary transition-all">
+                            Save New Password
+                        </button>
+</div>
+<!-- Forgot Password Sub-section -->
+<div class="pt-8 border-t border-outline-variant/30">
+<h3 class="text-sm font-bold text-on-surface-variant uppercase tracking-wider mb-4 px-1">Forgot Password?</h3>
+<p class="text-sm text-on-surface-variant mb-6 px-1">Choose a verification method to receive a secure reset link.</p>
+<div class="flex flex-wrap gap-4">
+<div class="flex flex-col gap-2">
+<button class="px-6 py-3 bg-surface-container-high text-on-surface-variant rounded-xl font-bold text-sm flex items-center gap-2 hover:bg-secondary-container hover:text-on-secondary-container transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="alternate_email">alternate_email</span>
+                                    Send reset link to Email
+                                </button>
+<div class="flex gap-4 px-2">
+<label class="flex items-center gap-2 text-xs font-medium cursor-pointer">
+<input checked="" class="text-primary focus:ring-primary rounded-full" name="reset_email" type="radio"/>
+                                        Default
+                                    </label>
+<label class="flex items-center gap-2 text-xs font-medium cursor-pointer">
+<input class="text-primary focus:ring-primary rounded-full" name="reset_email" type="radio"/>
+                                        Recovery
+                                    </label>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<button class="px-6 py-3 bg-surface-container-high text-on-surface-variant rounded-xl font-bold text-sm flex items-center gap-2 hover:bg-secondary-container hover:text-on-secondary-container transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="smartphone">smartphone</span>
+                                    Send reset link to Phone
+                                </button>
+<p class="text-[10px] text-on-surface-variant/70 italic px-2">Registered: +1 (555) 123-4567</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 2: Institutional & Academic -->
+<div class="lg:col-span-4 flex flex-col gap-8">
+<!-- Section 3: Institutional -->
+<div class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/15">
+<div class="flex items-center gap-3 mb-6">
+<span class="p-2 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-lg">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+</span>
+<h2 class="text-xl font-bold font-headline text-primary">Institution</h2>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant/70 ml-1">School Name</label>
+<p class="text-lg font-bold text-on-surface">FOKEL Academy of Higher Learning</p>
+</div>
+</div>
+<!-- Section 4: Academic Details -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex items-center gap-3 mb-8">
+<span class="p-2 bg-primary text-on-primary rounded-lg">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+</span>
+<h2 class="text-xl font-bold font-headline text-primary">Academic Details</h2>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Class Name</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="text" value="Advanced Legal Indexing 402"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Teacher Name</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="text" value="Dr. Elizabeth Sterling"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Class Day &amp; Time</label>
+<input class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all" type="text" value="Mon, Wed | 2:00 PM - 4:30 PM"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Class Format</label>
+<select class="bg-surface-container-highest border-none rounded-lg p-3 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 text-on-surface font-medium transition-all appearance-none cursor-pointer">
+<option value="Face to Face">Face to Face</option>
+<option value="Online">Online</option>
+<option selected="" value="Hybrid">Hybrid</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Action Button Container -->
+<div class="mt-4">
+<button class="w-full py-4 bg-primary/10 text-primary border-2 border-dashed border-primary/20 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary hover:border-transparent transition-all group">
+<span class="material-symbols-outlined transition-transform group-hover:scale-110" data-icon="save">save</span>
+                        Save Changes
+                    </button>
+<p class="text-xs text-center text-on-surface-variant mt-4 px-4">
+                        All information is stored securely following FOKEL's Curator Privacy Protocol.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- SideNavBar -->
+<aside class="hidden lg:flex h-screen w-64 fixed left-0 top-16 bg-slate-100 flex-col p-4 gap-2 border-r border-slate-200/50">
+<div class="px-2 pb-4 pt-0">
+<h3 class="text-lg font-bold text-slate-800 font-headline">Learning Modules</h3>
+<p class="text-xs text-slate-500">Curated Curriculum</p>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 bg-transparent text-slate-600 hover:bg-slate-200/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="medical_services">medical_services</span>
+<span class="font-medium text-sm">Medical Coding</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-transparent text-slate-600 hover:bg-slate-200/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="gavel">gavel</span>
+<span class="font-medium text-sm">Legal Indexing</span>
+</a>
+</div>
+<div class="mt-6 px-1">
+<button class="w-full bg-primary-container text-on-primary-container p-3 rounded-lg text-sm font-bold shadow-sm">
+                Continue Learning
+            </button>
+</div>
+<div class="mt-auto border-t border-slate-200/50 pt-4 flex flex-col gap-2">
+<a class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-200/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-medium text-sm">Help Center</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-200/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-medium text-sm text-error">Log Out</span>
+</a>
+</div>
+</aside>
+<style>
+        @media (min-width: 1024px) {
+            main { margin-left: 16rem; }
+            header { padding-left: 18rem; }
+        }
+    </style>
+</body></html>

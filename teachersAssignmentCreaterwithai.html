@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Template Builder | Curator Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#e1e3e4",
+                      "on-primary": "#ffffff",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-tertiary-container": "#ffcebd",
+                      "on-surface-variant": "#424654",
+                      "secondary": "#4a5d8e",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#dae2ff",
+                      "tertiary-container": "#a93802",
+                      "surface": "#f8f9fa",
+                      "surface-container-low": "#f3f4f5",
+                      "primary-fixed": "#d7e2ff",
+                      "on-secondary-container": "#3e5181",
+                      "outline": "#737785",
+                      "primary-container": "#265dad",
+                      "primary": "#004590",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#324575",
+                      "surface-dim": "#d9dadb",
+                      "on-surface": "#191c1d",
+                      "surface-bright": "#f8f9fa",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed-variant": "#00458f",
+                      "surface-container-high": "#e7e8e9",
+                      "secondary-container": "#b3c5fd",
+                      "on-primary-container": "#c8d9ff",
+                      "background": "#f8f9fa",
+                      "surface-container": "#edeeef",
+                      "inverse-surface": "#2e3132",
+                      "on-tertiary-fixed": "#380d00",
+                      "surface-tint": "#255dad",
+                      "outline-variant": "#c3c6d6",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed-variant": "#812800",
+                      "secondary-fixed-dim": "#b3c5fd",
+                      "error": "#ba1a1a",
+                      "on-background": "#191c1d",
+                      "tertiary-fixed-dim": "#ffb59b",
+                      "surface-variant": "#e1e3e4",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed": "#001b3f",
+                      "on-error": "#ffffff",
+                      "tertiary": "#822800",
+                      "tertiary-fixed": "#ffdbcf",
+                      "inverse-primary": "#abc7ff",
+                      "on-secondary-fixed": "#001847",
+                      "primary-fixed-dim": "#abc7ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .tab-active { border-bottom: 2px solid #004590; color: #004590; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed-dim">
+<!-- TopNavBar Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 h-16 w-full max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-blue-900 dark:text-blue-100" style="">Curator Admin</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="font-['Manrope'] font-semibold tracking-tight text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors" href="#" style="">Curriculum</a>
+<a class="font-['Manrope'] font-semibold tracking-tight text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors" href="#" style="">Assignments</a>
+<a class="font-['Manrope'] font-semibold tracking-tight text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors" href="#" style="">Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group hidden lg:block">
+<span class="absolute inset-y-0 left-3 flex items-center text-slate-400">
+<span class="material-symbols-outlined text-lg" style="">search</span>
+</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-1.5 text-sm focus:ring-2 ring-primary-container w-64" placeholder="Search templates..." type="text"/>
+</div>
+<button class="p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-colors" style="">
+<span class="material-symbols-outlined" style="">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-colors" style="">
+<span class="material-symbols-outlined" style="">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container overflow-hidden">
+<img alt="Teacher Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA551ycm1RSYnKZX2J-mkb-LE40DS5yDpFcKyiUeRO0cFwzSFS-GPnLFPOJPS_Qb7StEqOBiIz4MJ3E-vABitQdSKcWxQBS6hjsTcsk28-Zw6HUABlGcVzLxf53nKpEOGl9PMXkLXENjSUJB7pXqML0kmIwOMgQ_Xy4MM9OR87OJEcPGs1Mc8_vUzvritqAz_9hw9xIc6wlt3cLE5x2F_HzFg-IB6xuNf8nBSwXvHTmvB0fTo2ryAWUQWInn6SPQ3TY-WJTdeWOA8dW" style=""/>
+</div>
+</div>
+</div>
+<div class="bg-slate-200/50 dark:bg-slate-800/50 h-[1px] w-full"></div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- SideNavBar Navigation Shell -->
+<aside class="hidden md:flex flex-col h-[calc(100vh-64px)] sticky top-16 p-4 gap-2 w-64 border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-100 dark:bg-slate-900">
+<div class="mb-6 px-2">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="">school</span>
+</div>
+<div>
+<h3 class="text-lg font-black text-blue-800 dark:text-blue-200 leading-none" style="">Teacher Portal</h3>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 mt-1" style="">Data Entry Fundamentals</p>
+</div>
+</div>
+<button class="w-full py-2.5 bg-primary text-on-primary rounded-lg font-medium shadow-lg shadow-primary/20 flex items-center justify-center gap-2 active:scale-95 transition-transform" style="">
+<span class="material-symbols-outlined text-sm" style="">add</span>
+                New Template
+            </button>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 rounded-lg hover:translate-x-1 transition-all duration-200" href="#" style="">
+<span class="material-symbols-outlined" style="">dashboard</span>
+<span class="font-medium text-sm" style="">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 shadow-sm rounded-lg hover:translate-x-1 transition-all duration-200" href="#" style="">
+<span class="material-symbols-outlined" style="">description</span>
+<span class="font-medium text-sm" style="">Templates</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 rounded-lg hover:translate-x-1 transition-all duration-200" href="#" style="">
+<span class="material-symbols-outlined" style="">school</span>
+<span class="font-medium text-sm" style="">Classroom</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 rounded-lg hover:translate-x-1 transition-all duration-200" href="#" style="">
+<span class="material-symbols-outlined" style="">monitoring</span>
+<span class="font-medium text-sm" style="">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 rounded-lg hover:translate-x-1 transition-all duration-200" href="#" style="">
+<span class="material-symbols-outlined" style="">inventory_2</span>
+<span class="font-medium text-sm" style="">Archive</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-200/50">
+<a class="flex items-center gap-3 px-3 py-2 text-error hover:bg-error-container/20 rounded-lg transition-all mb-2" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-medium text-sm">Logout</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 rounded-lg transition-all" href="#" style="">
+<span class="material-symbols-outlined" style="">help_outline</span>
+<span class="font-medium text-sm" style="">Help Center</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto bg-surface relative">
+<!-- Builder Header Action Bar -->
+<div class="sticky top-0 z-40 bg-white/60 backdrop-blur-md px-8 py-4 flex flex-col border-b border-outline-variant/10">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-primary tracking-widest uppercase" style="">Current Project</span>
+<h1 class="text-2xl font-extrabold text-on-surface tracking-tight" style="">Biology 101 Lab Entry</h1>
+</div>
+<span class="px-2 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold rounded uppercase" style="">Draft</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 text-sm font-semibold text-secondary hover:bg-secondary-container/30 rounded-lg transition-colors" style="">Preview</button>
+<button class="px-4 py-2 text-sm font-semibold bg-surface-container-highest text-on-surface hover:bg-surface-container-high rounded-lg transition-colors" style="">Save Template</button>
+<button class="px-6 py-2 text-sm font-bold bg-primary text-on-primary rounded-lg shadow-md hover:opacity-90 transition-opacity" style="">Deploy to Students</button>
+</div>
+</div>
+<!-- Mode Tabs -->
+<div class="flex gap-8 mt-4 border-b border-slate-100">
+<button class="pb-2 text-sm font-bold tab-active transition-all" style="">Manual Setup</button>
+<button class="pb-2 text-sm font-bold text-slate-400 hover:text-primary transition-all flex items-center gap-2" style="">
+<span class="material-symbols-outlined text-sm" style="">auto_awesome</span>
+                    AI Assisted
+                </button>
+</div>
+</div>
+<div class="max-w-7xl mx-auto p-8 flex gap-8">
+<!-- Left Sidebar: Field List & AI Section -->
+<div class="w-80 shrink-0 space-y-6">
+<!-- AI Template Generator Card -->
+<div class="p-5 bg-gradient-to-br from-primary-container to-blue-700 rounded-2xl shadow-lg text-on-primary-container relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-10 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[100px]" style="">auto_awesome</span>
+</div>
+<div class="relative z-10">
+<h3 class="text-sm font-bold uppercase tracking-wider mb-2 flex items-center gap-2" style="">
+<span class="material-symbols-outlined text-base" style="">psychology</span>
+                            AI Generator
+                        </h3>
+<p class="text-xs opacity-90 mb-4 leading-relaxed" style="">Instantly build fields from a description or document.</p>
+<div class="space-y-2">
+<button class="w-full py-2 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-lg text-xs font-bold border border-white/20 transition-all flex items-center justify-center gap-2" style="">
+<span class="material-symbols-outlined text-sm" style="">upload_file</span>
+                                Upload Sample (PDF/JPG)
+                            </button>
+<button class="w-full py-2 bg-white text-primary rounded-lg text-xs font-bold shadow-sm hover:bg-slate-50 transition-all" style="">
+                                Describe Template
+                            </button>
+</div>
+</div>
+</div>
+<!-- Template Fields -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-sm font-bold text-on-surface-variant uppercase tracking-wider" style="">Template Fields</h2>
+<button class="text-primary hover:text-primary-container transition-colors" style="">
+<span class="material-symbols-outlined" style="">add_circle</span>
+</button>
+</div>
+<div class="space-y-3">
+<!-- Field Card 1 (Active) -->
+<div class="p-4 bg-surface-container-lowest rounded-xl shadow-sm ring-2 ring-primary transition-all cursor-pointer">
+<div class="flex items-center justify-between mb-1">
+<span class="text-[10px] font-bold text-primary bg-primary-fixed px-1.5 rounded" style="">01</span>
+<span class="material-symbols-outlined text-slate-300 text-sm" style="">drag_indicator</span>
+</div>
+<p class="text-sm font-bold text-on-surface" style="">First Name</p>
+<p class="text-[10px] text-on-surface-variant/70 uppercase font-medium mt-1" style="">Alpha Only • Max 24</p>
+</div>
+<!-- Field Card 2 -->
+<div class="p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-highest transition-all cursor-pointer group">
+<div class="flex items-center justify-between mb-1">
+<span class="text-[10px] font-bold text-slate-400 bg-slate-200 px-1.5 rounded" style="">02</span>
+<span class="material-symbols-outlined text-slate-300 text-sm opacity-0 group-hover:opacity-100" style="">drag_indicator</span>
+</div>
+<p class="text-sm font-bold text-on-surface-variant" style="">Last Name</p>
+<p class="text-[10px] text-on-surface-variant/50 uppercase font-medium mt-1" style="">Alpha Only • Max 32</p>
+</div>
+<!-- Field Card 3 -->
+<div class="p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-highest transition-all cursor-pointer group">
+<div class="flex items-center justify-between mb-1">
+<span class="text-[10px] font-bold text-slate-400 bg-slate-200 px-1.5 rounded" style="">03</span>
+<span class="material-symbols-outlined text-slate-300 text-sm opacity-0 group-hover:opacity-100" style="">drag_indicator</span>
+</div>
+<p class="text-sm font-bold text-on-surface-variant" style="">Student ID (SSN)</p>
+<p class="text-[10px] text-on-surface-variant/50 uppercase font-medium mt-1" style="">Numeric Only • Max 9</p>
+</div>
+<!-- Add Field Placeholder -->
+<div class="p-4 border-2 border-dashed border-outline-variant/30 rounded-xl flex items-center justify-center gap-2 text-slate-400 hover:text-primary hover:border-primary transition-all cursor-pointer">
+<span class="material-symbols-outlined text-sm" style="">add</span>
+<span class="text-xs font-bold uppercase tracking-wide" style="">Add New Field</span>
+</div>
+</div>
+</div>
+<!-- Template Rules & Reference Doc -->
+<div class="p-6 bg-secondary-container/20 rounded-2xl space-y-6">
+<div>
+<h3 class="text-xs font-extrabold text-on-secondary-fixed-variant uppercase tracking-widest mb-4" style="">Template Rules</h3>
+<div class="space-y-4">
+<label class="flex items-start gap-3 cursor-pointer group" style="">
+<div class="mt-0.5">
+<input checked="" class="rounded text-primary focus:ring-primary w-4 h-4 border-slate-300" type="checkbox"/>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface" style="">Auto-Advance</p>
+<p class="text-[10px] text-on-surface-variant mt-0.5 leading-relaxed" style="">Move to next record after all fields are filled.</p>
+</div>
+</label>
+<label class="flex items-start gap-3 cursor-pointer group" style="">
+<div class="mt-0.5">
+<input class="rounded text-primary focus:ring-primary w-4 h-4 border-slate-300" type="checkbox"/>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface" style="">Double-Entry Verification</p>
+<p class="text-[10px] text-on-surface-variant mt-0.5 leading-relaxed" style="">Require re-keying for critical data validation.</p>
+</div>
+</label>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-200/50">
+<h3 class="text-xs font-extrabold text-on-secondary-fixed-variant uppercase tracking-widest mb-3" style="">Reference Data</h3>
+<p class="text-[10px] text-on-surface-variant mb-4" style="">Upload a master copy to enable auto-grading and validation.</p>
+<div class="border border-dashed border-primary/30 rounded-lg p-4 bg-white/40 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-white/60 transition-colors">
+<span class="material-symbols-outlined text-primary mb-2" style="">cloud_upload</span>
+<p class="text-[10px] font-bold text-primary uppercase" style="">Upload Reference</p>
+<p class="text-[9px] text-slate-400 mt-1" style="">PDF, Excel, or CSV</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Center: Configuration Panel (Main Canvas) -->
+<div class="flex-1">
+<div class="bg-surface-container-lowest rounded-3xl p-10 shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-12 h-12 bg-primary-container/20 text-primary flex items-center justify-center rounded-2xl">
+<span class="material-symbols-outlined text-3xl" style="">edit_note</span>
+</div>
+<div>
+<h2 class="text-xl font-bold tracking-tight" style="">Field Configuration</h2>
+<p class="text-sm text-on-surface-variant" style="">Modifying: <span class="text-primary font-semibold" style="">First Name</span></p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<!-- Title & Layout -->
+<div class="col-span-2 md:col-span-1 space-y-6">
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface-variant uppercase ml-1" style="">Field Title</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl py-3 px-4 text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" type="text" value="First Name"/>
+<p class="text-[10px] text-on-surface-variant/60 ml-1 italic" style="">This label will be displayed above the input box.</p>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface-variant uppercase ml-1" style="">Placeholder Text</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl py-3 px-4 text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" placeholder="e.g. John" type="text"/>
+</div>
+</div>
+<!-- Character Controls -->
+<div class="col-span-2 md:col-span-1 space-y-6">
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface-variant uppercase ml-1" style="">Max Characters</label>
+<div class="flex items-center gap-3">
+<input class="w-24 bg-surface-container-highest border-none rounded-xl py-3 px-4 text-on-surface font-mono focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" type="number" value="24"/>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-on-surface leading-none" style="">Character Limit</span>
+<span class="text-[10px] text-on-surface-variant" style="">System default is 256.</span>
+</div>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface-variant uppercase ml-1" style="">Allowed Characters</label>
+<select class="w-full bg-surface-container-highest border-none rounded-xl py-3 px-4 text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all appearance-none cursor-pointer"><option value="alpha">Alpha Only (A-Z)</option>
+<option value="numeric">Numeric Only (0-9)</option>
+<option value="alphanumeric">Alphanumeric (A-Z, 0-9)</option>
+<option value="special">Special Characters Allowed</option></select>
+</div>
+</div>
+<!-- Advanced Verification (Asymmetric Grid Break) -->
+<div class="col-span-2 mt-4 p-8 bg-surface-container-low rounded-2xl">
+<div class="flex items-start justify-between mb-6">
+<div>
+<h3 class="text-sm font-bold text-on-surface" style="">Verification Settings</h3>
+<p class="text-xs text-on-surface-variant mt-1" style="">Ensure data integrity with custom validation keys.</p>
+</div>
+<span class="material-symbols-outlined text-primary-container" style="">verified</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<label class="text-xs font-bold text-on-surface-variant uppercase" style="">Custom Verification Code</label>
+<div class="relative inline-block w-8 h-4 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-4 h-4 rounded-full bg-white border-2 border-slate-300 appearance-none cursor-pointer checked:right-0 checked:bg-primary checked:border-primary transition-all" id="toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-4 rounded-full bg-slate-200 cursor-pointer" for="toggle" style=""></label>
+</div>
+</div>
+<input class="w-full bg-white border border-outline-variant/20 rounded-xl py-3 px-4 text-on-surface focus:ring-2 focus:ring-primary transition-all" placeholder="Enter key (e.g. AUTH_KEY_1)" type="text"/>
+</div>
+<div class="bg-primary-container/5 rounded-xl p-4 flex gap-4">
+<div class="shrink-0">
+<span class="material-symbols-outlined text-primary" style="">info</span>
+</div>
+<p class="text-[11px] leading-relaxed text-on-surface-variant" style="">
+                                        Verification codes are required when students submit the form. If enabled, the system will prompt for this specific key before finalizing the record. This is highly recommended for high-stakes examinations or research data entry.
+                                    </p>
+</div>
+</div>
+</div>
+<div class="col-span-2 flex justify-end gap-3 pt-6 border-t border-outline-variant/10">
+<button class="px-6 py-2.5 text-sm font-bold text-error hover:bg-error-container/20 rounded-xl transition-colors" style="">Delete Field</button>
+<button class="px-6 py-2.5 text-sm font-bold bg-primary text-on-primary rounded-xl hover:opacity-90 transition-opacity" style="">Apply Configuration</button>
+</div>
+</div>
+</div>
+<!-- Live Preview Card (Glassmorphism inspired) -->
+<div class="mt-8 relative overflow-hidden rounded-3xl border border-white/40 bg-gradient-to-br from-white/80 to-slate-200/50 p-8 backdrop-blur-xl">
+<div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-8xl" style='font-variation-settings: "FILL" 1;'>visibility</span>
+</div>
+<h4 class="text-xs font-bold text-primary-container uppercase tracking-widest mb-6 flex items-center gap-2" style="">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        Interactive Preview
+                    </h4>
+<div class="max-w-md mx-auto space-y-4 py-4">
+<div class="space-y-1.5">
+<label class="text-[10px] font-bold text-slate-500 uppercase tracking-tight" style="">First Name</label>
+<div class="bg-white/80 border border-slate-200 rounded-lg p-3 text-slate-400 text-sm italic flex justify-between items-center">
+<span class="" style="">Type your name...</span>
+<span class="text-[10px] font-mono text-slate-300" style="">0/24</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-[10px] font-bold text-slate-500 uppercase tracking-tight" style="">Last Name</label>
+<div class="bg-white/80 border border-slate-200 rounded-lg p-3 text-slate-400 text-sm italic" style="">
+                                Type your last name...
+                            </div>
+</div>
+<div class="space-y-1.5">
+<label class="text-[10px] font-bold text-slate-500 uppercase tracking-tight" style="">Password</label>
+<div class="relative bg-white/80 border border-slate-200 rounded-lg flex items-center">
+<input class="w-full bg-transparent border-none focus:ring-0 p-3 text-slate-600 text-sm" id="preview-password" placeholder="Enter password" type="password"/>
+<button class="absolute right-3 p-1 text-slate-400 hover:text-primary transition-colors focus:outline-none" onclick="togglePasswordVisibility('preview-password', this)">
+<span class="material-symbols-outlined text-lg" id="password-toggle-icon">visibility</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="mt-12 p-8 border-t border-outline-variant/10 flex flex-col md:flex-row items-center justify-between gap-4 text-on-surface-variant/60">
+<div class="flex items-center gap-6">
+<span class="text-[10px] font-bold uppercase tracking-widest" style="">Scholar Metric v2.4.0</span>
+<span class="text-[10px] font-bold uppercase tracking-widest" style="">Data Privacy Compliant</span>
+</div>
+<p class="text-[10px]" style="">© 2024 Curator Admin Portal. All rights reserved.</p>
+</footer>
+</main>
+</div>
+<!-- Floating Action for Mobile -->
+<button class="md:hidden fixed bottom-6 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center z-50" style="">
+<span class="material-symbols-outlined" style="">add</span>
+</button>
+<script>
+    function togglePasswordVisibility(inputId, btn) {
+        const input = document.getElementById(inputId);
+        const icon = btn.querySelector('.material-symbols-outlined');
+        if (input.type === 'password') {
+            input.type = 'text';
+            icon.textContent = 'visibility_off';
+        } else {
+            input.type = 'password';
+            icon.textContent = 'visibility';
+        }
+    }
+</script>
+</body></html>
